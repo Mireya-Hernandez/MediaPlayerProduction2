@@ -134,7 +134,7 @@ public class Controller {
                 System.out.println(rs.getString(1));
             }*/
 
-            // STEP 4: Clean-up environment
+            // STEP 4: Clean-up environmentb
             stmt.close();
             conn.close();
 
