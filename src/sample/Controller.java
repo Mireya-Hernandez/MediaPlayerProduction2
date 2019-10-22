@@ -1,5 +1,6 @@
 package sample;
 
+import java.sql.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,66 +13,66 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.sql.*;
+
 
 
 public class Controller {
 
   @FXML
-  private Tab ProduceLineTab;
+  private Tab produceLineTab;
 
   @FXML
-  private AnchorPane ProductLineAP;
+  private AnchorPane productLineAP;
 
   @FXML
-  private Label ProductNameLabel;
+  private Label productNameLabel;
 
   @FXML
-  private Label ManufacturerLabel;
+  private Label manufacturerLabel;
 
   @FXML
-  private Label ItemTypeGrid;
+  private Label itemTypeGrid;
 
   @FXML
-  private TextField ProductNameTextField;
+  private TextField productNameTextField;
 
   @FXML
-  private TextField ManufacturerTextField;
+  private TextField manufacturerTextField;
 
   @FXML
-  private ChoiceBox<String> ChoiceBoxItemType;
+  private ChoiceBox<String> choiceBoxItemType;
 
   @FXML
   private Button addProductButton;
   @FXML
-  private Tab ProduceTab;
+  private Tab produceTab;
 
   @FXML
-  private AnchorPane ProduceAP;
+  private AnchorPane produceAP;
 
   @FXML
-  private Label ChooseProductLabel;
+  private Label chooseProductLabel;
 
   @FXML
-  private ListView<?> ChooseProductListView;
+  private ListView<?> chooseProductListView;
 
   @FXML
-  private Label ChooseQuantityLabel;
+  private Label chooseQuantityLabel;
 
   @FXML
   private ComboBox<String> chooseQuanityComboBox;
 
   @FXML
-  private Button RecordProductionButton;
+  private Button recordProductionButton;
 
   @FXML
-  private Tab ProductionLogTab;
+  private Tab productionLogTab;
 
   @FXML
-  private AnchorPane ProductionLogAP;
+  private AnchorPane productionLogAP;
 
   @FXML
-  private TextArea TextArea;
+  private TextArea textArea;
 
   @FXML
   void addProductButtonClick(ActionEvent event) {
@@ -103,13 +104,13 @@ public class Controller {
   }
 
   public static void initializedDB() {
-
+    //No more than 2 constructive capital letter
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/MediaDB";
 
     //  Database credentials
-    final String USER = "";
-    final String PASS = "";
+    final String User = "";
+    final String Pass = "";
     Connection conn = null;
     Statement stmt = null;
 
@@ -118,21 +119,16 @@ public class Controller {
       Class.forName(JDBC_DRIVER);
 
       //STEP 2: Open a connection
-      conn = DriverManager.getConnection(DB_URL, USER, PASS); //Fixbug no passward needed, empty
+      conn = DriverManager.getConnection(DB_URL, User, Pass); //Fixbug no passward needed, empty
 
       //STEP 3: Execute a query
       stmt = conn.createStatement();
 
       //String sql = "SELECT * FROM JOBS";
 
-      String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' )";
+      String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', "
+          + "'Apple', 'iPod' )";
       stmt.executeUpdate(sql);
-      // PreparedStatement preparedStatement = conn.prepareStatement(sql);
-            /*
-            ResultSet rs = stmt.executeQuery(sql);
-            while (rs.next()) {
-                System.out.println(rs.getString(1));
-            }*/
 
       // STEP 4: Clean-up environment
       stmt.close();
