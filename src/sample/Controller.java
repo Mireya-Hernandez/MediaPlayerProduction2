@@ -17,132 +17,132 @@ import java.sql.*;
 
 public class Controller {
 
-    @FXML
-    private Tab ProduceLineTab;
+  @FXML
+  private Tab ProduceLineTab;
 
-    @FXML
-    private AnchorPane ProductLineAP;
+  @FXML
+  private AnchorPane ProductLineAP;
 
-    @FXML
-    private Label ProductNameLabel;
+  @FXML
+  private Label ProductNameLabel;
 
-    @FXML
-    private Label ManufacturerLabel;
+  @FXML
+  private Label ManufacturerLabel;
 
-    @FXML
-    private Label ItemTypeGrid;
+  @FXML
+  private Label ItemTypeGrid;
 
-    @FXML
-    private TextField ProductNameTextField;
+  @FXML
+  private TextField ProductNameTextField;
 
-    @FXML
-    private TextField ManufacturerTextField;
+  @FXML
+  private TextField ManufacturerTextField;
 
-    @FXML
-    private ChoiceBox<String> ChoiceBoxItemType;
+  @FXML
+  private ChoiceBox<String> ChoiceBoxItemType;
 
-    @FXML
-    private Button addProductButton;
-    @FXML
-    private Tab ProduceTab;
+  @FXML
+  private Button addProductButton;
+  @FXML
+  private Tab ProduceTab;
 
-    @FXML
-    private AnchorPane ProduceAP;
+  @FXML
+  private AnchorPane ProduceAP;
 
-    @FXML
-    private Label ChooseProductLabel;
+  @FXML
+  private Label ChooseProductLabel;
 
-    @FXML
-    private ListView<?> ChooseProductListView;
+  @FXML
+  private ListView<?> ChooseProductListView;
 
-    @FXML
-    private Label ChooseQuantityLabel;
+  @FXML
+  private Label ChooseQuantityLabel;
 
-    @FXML
-    private ComboBox<String> chooseQuanityComboBox;
+  @FXML
+  private ComboBox<String> chooseQuanityComboBox;
 
-    @FXML
-    private Button RecordProductionButton;
+  @FXML
+  private Button RecordProductionButton;
 
-    @FXML
-    private Tab ProductionLogTab;
+  @FXML
+  private Tab ProductionLogTab;
 
-    @FXML
-    private AnchorPane ProductionLogAP;
+  @FXML
+  private AnchorPane ProductionLogAP;
 
-    @FXML
-    private TextArea TextArea;
+  @FXML
+  private TextArea TextArea;
 
-    @FXML
-    void addProductButtonClick(ActionEvent event){
-        System.out.println("Add product");
-        initializedDB();
+  @FXML
+  void addProductButtonClick(ActionEvent event) {
+    System.out.println("Add product");
+    initializedDB();
 
-    }
+  }
 
-    @FXML
-    void recordProButton(ActionEvent event) {
-        System.out.println("Add record");
-    }
-
-
-    public void initialize(){
+  @FXML
+  void recordProButton(ActionEvent event) {
+    System.out.println("Add record");
+  }
 
 
-        chooseQuanityComboBox.getItems().add("1");
-        chooseQuanityComboBox.getItems().add("2");
-        chooseQuanityComboBox.getItems().add("3");
-        chooseQuanityComboBox.getItems().add("4");
-        chooseQuanityComboBox.getItems().add("5");
-        chooseQuanityComboBox.getItems().add("6");
-        chooseQuanityComboBox.getItems().add("7");
-        chooseQuanityComboBox.getItems().add("8");
-        chooseQuanityComboBox.getItems().add("9");
-        chooseQuanityComboBox.getItems().add("10");
-        chooseQuanityComboBox.setEditable(true);
-        chooseQuanityComboBox.getSelectionModel().selectFirst();
-    }
-    public static void initializedDB() {
+  public void initialize() {
 
-        final String JDBC_DRIVER = "org.h2.Driver";
-        final String DB_URL = "jdbc:h2:./res/MediaDB";
+    chooseQuanityComboBox.getItems().add("1");
+    chooseQuanityComboBox.getItems().add("2");
+    chooseQuanityComboBox.getItems().add("3");
+    chooseQuanityComboBox.getItems().add("4");
+    chooseQuanityComboBox.getItems().add("5");
+    chooseQuanityComboBox.getItems().add("6");
+    chooseQuanityComboBox.getItems().add("7");
+    chooseQuanityComboBox.getItems().add("8");
+    chooseQuanityComboBox.getItems().add("9");
+    chooseQuanityComboBox.getItems().add("10");
+    chooseQuanityComboBox.setEditable(true);
+    chooseQuanityComboBox.getSelectionModel().selectFirst();
+  }
 
-        //  Database credentials
-        final String USER = "";
-        final String PASS = "";
-        Connection conn = null;
-        Statement stmt = null;
+  public static void initializedDB() {
 
-        try {
-            // STEP 1: Register JDBC driver
-            Class.forName(JDBC_DRIVER);
+    final String JDBC_DRIVER = "org.h2.Driver";
+    final String DB_URL = "jdbc:h2:./res/MediaDB";
 
-            //STEP 2: Open a connection
-            conn = DriverManager.getConnection(DB_URL, USER, PASS); //Fixbug no passward needed, empty
+    //  Database credentials
+    final String USER = "";
+    final String PASS = "";
+    Connection conn = null;
+    Statement stmt = null;
 
-            //STEP 3: Execute a query
-            stmt = conn.createStatement();
+    try {
+      // STEP 1: Register JDBC driver
+      Class.forName(JDBC_DRIVER);
 
-            //String sql = "SELECT * FROM JOBS";
+      //STEP 2: Open a connection
+      conn = DriverManager.getConnection(DB_URL, USER, PASS); //Fixbug no passward needed, empty
 
-            String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' )";
-            stmt.executeUpdate(sql);
-           // PreparedStatement preparedStatement = conn.prepareStatement(sql);
+      //STEP 3: Execute a query
+      stmt = conn.createStatement();
+
+      //String sql = "SELECT * FROM JOBS";
+
+      String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', 'Apple', 'iPod' )";
+      stmt.executeUpdate(sql);
+      // PreparedStatement preparedStatement = conn.prepareStatement(sql);
             /*
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 System.out.println(rs.getString(1));
             }*/
 
-            // STEP 4: Clean-up environment
-            stmt.close();
-            conn.close();
+      // STEP 4: Clean-up environment
+      stmt.close();
+      conn.close();
 
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+      e.printStackTrace();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
+  }
 }
