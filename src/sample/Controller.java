@@ -118,7 +118,7 @@ public class Controller {
             Class.forName(JDBC_DRIVER);
 
             //STEP 2: Open a connection
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS); //Fixbug no passward needed, empty
 
             //STEP 3: Execute a query
             stmt = conn.createStatement();
