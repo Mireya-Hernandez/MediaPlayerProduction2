@@ -4,13 +4,13 @@ package sample;
 public abstract class Product implements Item {
 
   private int Id; //mismatch pattern
-  private String Type;
+  private ItemType Type;
   private String Manufacturer;
   private String Name;
 
 
 
-  Product(String name, String manufacturer, String type) {
+  Product(String name, String manufacturer, ItemType type) {
     this.Name = name;
     this.Manufacturer = manufacturer;
     this.Type = type;
@@ -18,7 +18,7 @@ public abstract class Product implements Item {
 
   public Product(String product, String manufacturer) {
   }
-
+  
   public String toString() {
     return "Name: " + Name + "\n" + "Manufacturer: " + Manufacturer + "\n" + "Type: "
         + Type;
@@ -44,7 +44,7 @@ public abstract class Product implements Item {
 }
 
 class Widget extends Product {
-  Widget(String name, String manufacturer, String type) {
+  Widget(String name, String manufacturer, ItemType type) {
     super(name, manufacturer, type);
   }
 }
