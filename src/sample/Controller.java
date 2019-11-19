@@ -7,6 +7,7 @@
 
 package sample;
 
+import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,6 +18,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -29,9 +31,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 
-public class Controller  {
+public class Controller {
+
   @FXML
-  private ComboBox<ItemType> choiceBoxItemType;
+  private ChoiceBox<ItemType> choiceBoxItemType;
   @FXML
   private Tab produceLineTab;
 
@@ -89,19 +92,19 @@ public class Controller  {
   private TableView<Product> exsitProductTableView;
 
   @FXML
-  private TableColumn<?, ?> colProductName;
+  private TableColumn<String, Product> colProductName;
 
   @FXML
-  private TableColumn<?, ?> colManufacturer;
+  private TableColumn<ItemType, Product> tableColumType;
+
+  @FXML
+  private TableColumn<String, Product> colManufacturer;
   private ObservableList<Product> productionLine;
 
 
-
-
-
   /**
-   * User can press the add production button and it display is the console add product.
-   * In the database there is type - audio, manufacturer-Apple and name-ipod.
+   * User can press the add production button and it display is the console add product. In the
+   * database there is type - audio, manufacturer-Apple and name-ipod.
    */
   @FXML
   void addProductButtonClick(ActionEvent event) {
@@ -115,33 +118,25 @@ public class Controller  {
   }
 
   /**
-   * Represents initialization of the comobox to add string items users can select .
-   * The user may select  or input one string if they do not the default is 1.
+   * Represents initialization of the comobox to add string items users can select . The user may
+   * select  or input one string if they do not the default is 1.
    */
   public void initialize() {
 
     chooseQuanityComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     chooseQuanityComboBox.setEditable(true);
     chooseQuanityComboBox.getSelectionModel().selectFirst();
-
-    // choiceBoxItemType.getItems().addAll(ItemType.AUDIO,ItemType.AUDIO_MOBILE,ItemType.VISUAL,
-    //ItemType.VISUAL_MOBILE);
+    //choiceBox for ItemType
+    choiceBoxItemType.getItems().addAll(ItemType.values());
 
     productionLine = FXCollections.observableArrayList();// Observable list is an interface
     colProductName.setCellValueFactory(new PropertyValueFactory("Product"));
     colManufacturer.setCellValueFactory(new PropertyValueFactory("Manufcturer"));
+    tableColumType.setCellValueFactory(new PropertyValueFactory("Type"));
     exsitProductTableView.setItems(productionLine);
-
-    productionLine.add(new Product("Ipod", "Apple") {
-    });
-    addProduct();
-    addProduct();
+    //add more code
   }
 
-  public void addProduct() {
-    productionLine.add(new Product("Ipod","Apple") {
-    });
-  }
 
   /**
    * The testMultimedia class allow for demonstration of the functionality of the user interface.

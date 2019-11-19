@@ -34,13 +34,13 @@
       <RowConstraints />
   </rowConstraints>
   <children>
-    <TabPane prefHeight="349.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3">
+    <TabPane prefHeight="269.0" prefWidth="435.0" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3">
       <tabs>
         <Tab fx:id="ProduceLineTab" text="Product Line">
           <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <AnchorPane fx:id="ProductLineAP" layoutY="-7.0" prefHeight="198.0" prefWidth="413.0">
+                <AnchorPane fx:id="ProductLineAP" layoutY="-7.0" prefHeight="253.0" prefWidth="348.0">
                   <children>
                     <GridPane layoutX="14.0" layoutY="14.0" prefHeight="113.0" prefWidth="285.0">
                       <columnConstraints>
@@ -61,11 +61,12 @@
                         <ChoiceBox fx:id="choiceBoxItemType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                       </children>
                     </GridPane>
-                    <Button fx:id="AddProductButton" layoutX="316.0" layoutY="166.0" mnemonicParsing="false" onAction="#addProductButtonClick" text="Add Product" textFill="#335bc4" />
-                              <TableView fx:id="exsitProductTableView" layoutX="145.0" layoutY="140.0" prefHeight="51.0" prefWidth="153.0">
+                    <Button fx:id="AddProductButton" layoutX="19.0" layoutY="166.0" mnemonicParsing="false" onAction="#addProductButtonClick" text="Add Product" textFill="#335bc4" />
+                              <TableView fx:id="exsitProductTableView" layoutX="117.0" layoutY="140.0" prefHeight="110.0" prefWidth="233.0">
                                 <columns>
-                                  <TableColumn fx:id="colProductName" prefWidth="75.0" text="Product Name" />
                                   <TableColumn fx:id="colManufacturer" prefWidth="75.0" text="Manufacturer" />
+                                  <TableColumn fx:id="colProductName" prefWidth="75.0" text="Product Name" />
+                                    <TableColumn fx:id="tableColumType" prefWidth="75.0" text="Type" />
                                 </columns>
                               </TableView>
                               <Label layoutX="13.0" layoutY="140.0" prefHeight="17.0" prefWidth="95.0" text="Exsiting Product" textFill="#2139ee" />
