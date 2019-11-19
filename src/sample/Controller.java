@@ -192,6 +192,7 @@ public class Controller {
 
       String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', "
           + "'Apple', 'iPod' )";
+      System.out.println("sql is " + sql);
       stmt.executeUpdate(sql);
 
       // STEP 4: Clean-up environment
