@@ -12,10 +12,10 @@ public class ProductionRecord {
 
   /**
    *
-   * @param productionNum
-   * @param productID
-   * @param serialNum
-   * @param prodDate
+   * @param productionNum Integer for the production number.
+   * @param productID  Product identification number.
+   * @param serialNum The serial number of a product.
+   * @param prodDate The date the product was created.
    */
   public ProductionRecord ( int productionNum, int productID, String serialNum, Date prodDate) {
     this.productionNum = productionNum;
@@ -26,8 +26,8 @@ public class ProductionRecord {
 
   /**
    *
-   * @param productProduced
-   * @param count
+   * @param productProduced The product produce.
+   * @param count The loop count.
    */
   public ProductionRecord(Product productProduced, int count) {
     serialNum =  "0000" + count;
@@ -80,7 +80,7 @@ public class ProductionRecord {
 
   /**
    *
-   * @param productID
+   * @param productID Product identification.
    */
   public ProductionRecord(int productID) {
     productionNum = 0;
