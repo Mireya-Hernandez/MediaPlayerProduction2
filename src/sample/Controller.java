@@ -157,7 +157,7 @@ public class Controller {
       p.next();
       p.previous();
     }   //does not allow me to move further
-    }
+  }
 
 
 
@@ -174,7 +174,7 @@ public class Controller {
 
     //  Database credentials
     final String User = "";
-    final String Pass = "";
+    final String Pass = "PASSWORD";
     Connection conn = null;
     Statement stmt = null;
 
