@@ -10,6 +10,7 @@ package sample;
 import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -34,84 +35,91 @@ import javafx.scene.layout.AnchorPane;
 public class Controller {
 
   @FXML
-  private ChoiceBox<ItemType> choiceBoxItemType;
-  @FXML
-  private Tab produceLineTab;
+  public ChoiceBox<ItemType> choiceBoxItemType;
 
   @FXML
-  private AnchorPane productLineAP;
+  public Tab produceLineTab;
 
   @FXML
-  private Label productNameLabel;
+  public AnchorPane productLineAP;
 
   @FXML
-  private Label manufacturerLabel;
+  public Label productNameLabel;
 
   @FXML
-  private Label itemTypeGrid;
+  public Label manufacturerLabel;
 
   @FXML
-  private TextField productNameTextField;
+  public Label itemTypeGrid;
 
   @FXML
-  private TextField manufacturerTextField;
+  public TextField productNameTextField;
 
   @FXML
-  private Button addProductButton;
-  @FXML
-  private Tab produceTab;
+  public TextField manufacturerTextField;
 
   @FXML
-  private AnchorPane produceAP;
+  public Button addProductButton;
 
   @FXML
-  private Label chooseProductLabel;
+  public Tab produceTab;
 
   @FXML
-  private ListView<?> chooseProductListView;
+  public AnchorPane produceAP;
 
   @FXML
-  private Label chooseQuantityLabel;
+  public Label chooseProductLabel;
 
   @FXML
-  private ComboBox<Integer> chooseQuanityComboBox;
+  public ListView<?> chooseProductListView;
 
   @FXML
-  private Button recordProductionButton;
+  public Label chooseQuantityLabel;
 
   @FXML
-  private Tab productionLogTab;
+  public ComboBox<Integer> chooseQuanityComboBox;
 
   @FXML
-  private AnchorPane productionLogAP;
+  public Button recordProductionButton;
 
   @FXML
-  private TextArea textArea;
+  public Tab productionLogTab;
 
   @FXML
-  private TableView<Product> exsitProductTableView;
+  public AnchorPane productionLogAP;
 
   @FXML
-  private TableColumn<String, Product> colProductName;
+  public TextArea textArea;
 
   @FXML
-  private TableColumn<ItemType, Product> tableColumType;
+  public TableView<Product> exsitProductTableView;
 
   @FXML
-  private TableColumn<String, Product> colManufacturer;
-  private ObservableList<Product> productionLine;
+  public TableColumn< Product, String> colProductName;
 
+  @FXML
+  public TableColumn<Product, String> tableColumType;
 
-  /**
-   * User can press the add production button and it display is the console add product. In the
+  @FXML
+  public TableColumn< Product, String> colManufacturer;
+
+  private ObservableList<Product> productionLine =
+        FXCollections.observableArrayList(); //Table view
+
+ /**
+   * ` User can press the add production button and it display is the console add product. In the
    * database there is type - audio, manufacturer-Apple and name-ipod.
    */
-  @FXML
-  void addProductButtonClick(ActionEvent event) {
-    System.out.println("Add product");
-    initializedDB();
-  }
+  public void addProductButtonClick(ActionEvent event) {
+    String txtName = productNameTextField.getText();
+    String txtMan = manufacturerTextField.getText();
+    ItemType type = choiceBoxItemType.getValue();
 
+   productionLine.add(new Product(txtName,txtMan,type));
+   exsitProductTableView.setItems(productionLine);
+
+
+  }
   @FXML
   void recordProButton(ActionEvent event) {
     System.out.println("Add record");
@@ -129,45 +137,21 @@ public class Controller {
     //choiceBox for ItemType
     choiceBoxItemType.getItems().addAll(ItemType.values());
 
-    productionLine = FXCollections.observableArrayList();// Observable list is an interface
-    colProductName.setCellValueFactory(new PropertyValueFactory("Product"));
-    colManufacturer.setCellValueFactory(new PropertyValueFactory("Manufcturer"));
-    tableColumType.setCellValueFactory(new PropertyValueFactory("Type"));
-    exsitProductTableView.setItems(productionLine);
-    //add more code
-  }
 
+    initializedDB();
+    settingUpColumns();
+    }
 
-  /**
-   * The testMultimedia class allow for demonstration of the functionality of the user interface.
-   */
-  public static void testMultimedia() {
-    AudioPlayer newAudioProduct = new AudioPlayer("DP-X1A", "Onkyo",
-          "DSD/FLAC/ALAC/WAV/AIFF/MQA/Ogg-Vorbis/MP3/AAC", "M3U/PLS/WPL");
-    Screen newScreen = new Screen("720x480", 40, 22);
-    MoviePlayer newMovieProduct = new MoviePlayer("DBPOWER MK101", "OracleProduction", newScreen,
-          MonitorType.LCD);
-    ArrayList<MultimediaControl> productList = new ArrayList<MultimediaControl>();
-    productList.add(newAudioProduct);
-    productList.add(newMovieProduct);
-    for (MultimediaControl p : productList) {
-      System.out.println(p);
-      p.play();
-      p.stop();
-      p.next();
-      p.previous();
-    }   //does not allow me to move further
-  }
+ private void settingUpColumns() {
+  colProductName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+  colManufacturer.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
+  tableColumType.setCellValueFactory(new PropertyValueFactory<>("Type"));
+
+}
 
 
 
-
-  /**
-   * Represents initialization of the h2 database to connect it to the Media Production Program .
-   * In the database there is type - audio, manufacturer-Apple and name-ipod.
-   */
-
-  public static void initializedDB() {
+static void initializedDB() {
     //No more than 2 constructive capital letter but i left it as is
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/MediaDB";
@@ -190,8 +174,8 @@ public class Controller {
 
       //String sql = "SELECT * FROM JOBS";
 
-      String sql = "INSERT INTO Product(type, manufacturer, name) VALUES ( 'AUDIO', "
-          + "'Apple', 'iPod' )";
+      String sql =
+           "INSERT INTO PRODUCT(ID,NAME,TYPE,MANUFACTURER)" + " VALUES (?,?,?)";
       System.out.println("sql is " + sql);
       stmt.executeUpdate(sql);
 
@@ -205,6 +189,8 @@ public class Controller {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-  }
-
 }
+}
+
+
+

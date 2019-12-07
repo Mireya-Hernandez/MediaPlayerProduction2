@@ -1,0 +1,40 @@
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "sans-serif";
+    -fx-font-style: italic;
+    -fx-border-color: #48BF91;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-background-color: silver;
+   /* -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );*/
+    -fx-background-radius: 20;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#8BD9C7, #0076BE);
+}
+
+.tab{
+    -fx-background-color: silver;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-style: bold;
+
+}
+.tab-label{
+    -fx-text-fill: white;
+    -fx-font-family: sans-serif;
+    -fx-font-style: bold;
+}
+.tab:hover{
+    -fx-background-color: rgba(110, 96, 116, 0.44);
+}
+.tab-pane{
+-fx-background-color: pink;
+}
+.label{
+-fx-text-fill:white;
+}
+.table-coulmn {
+-fx-background-color: silver;
+}

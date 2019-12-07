@@ -12,6 +12,10 @@ body {
     font-size:14px;
     margin:0;
 }
+.tab {
+    background: coral;
+    text-decoration-color: cornsilk;
+}
 a:link, a:visited {
     text-decoration:none;
     color:#4A6782;
@@ -104,8 +108,8 @@ Document title and Copyright styles
     color:#bb7a2a;
 }
 .tab {
-    background-color:#0066FF;
-    color:#ffffff;
+    background-color: #1664ff;
+    color:#fff8a5;
     padding:8px;
     width:5em;
     font-weight:bold;
@@ -136,7 +140,7 @@ Navigation bar styles
 .bottomNav {
     margin-top:10px;
     background-color:#4D7A97;
-    color:#FFFFFF;
+    color: #0f0f0f;
     float:left;
     padding:0;
     width:100%;

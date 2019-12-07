@@ -30,8 +30,8 @@ public class ProductionRecord {
    * @param count The loop count.
    */
   public ProductionRecord(Product productProduced, int count) {
-    serialNum =  "0000" + count;
-    //productProduced.getManufacturer().substring(0,3) + Item.Type().code +
+    serialNum =  "%05d" + count;
+    String newNum = productProduced.getManufacturer().substring(0,3) + productProduced.getType() ;
 
 
 
