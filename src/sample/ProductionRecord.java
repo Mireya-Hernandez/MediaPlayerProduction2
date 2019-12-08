@@ -16,6 +16,7 @@ public class ProductionRecord {
    * @param serialNum     The serial number of a product.
    * @param prodDate      The date the product was created.
    */
+
   public ProductionRecord(int productionNum, int productID, String serialNum, Date prodDate) {
     this.productionNum = productionNum;
     this.productID = productID;

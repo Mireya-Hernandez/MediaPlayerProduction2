@@ -160,7 +160,7 @@ public class Controller {
       Class.forName(JDBC_DRIVER);
 
       //STEP 2: Open a connection
-      conn = DriverManager.getConnection(DB_URL, User, Pass); //Fixbug no passward needed, empty
+      conn = DriverManager.getConnection(DB_URL, User, Pass);
 
       //STEP 3: Execute a query
       stmt = conn.createStatement();
