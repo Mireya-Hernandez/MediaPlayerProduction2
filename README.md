@@ -14,10 +14,10 @@ Note: Unable to get document folder functioning.
 # Getting Started
 Download repository and try it out.
 # Built With
-*Intellij by JetBrains
-*SceneBuilder
-*JavaFX
-*Data Base H2
+* Intellij by JetBrains
+* SceneBuilder
+* JavaFX
+* Data Base H2
 # Contributing
 This is to help share knowledge with other beginner-intermedian programmers.
 # Author
@@ -25,12 +25,13 @@ This is to help share knowledge with other beginner-intermedian programmers.
 # License
  GNU General Public License
 # Acknowledgments
-  *Professor Vanselow, YouTube Videos
-  *Teacher Assistant Damien
-  *Classmate Luis Hernandez 
-  *StackOverFlow 
-  *Rashid Coder Youtube videos
-  *https://www.geeksforgeeks.org/java/
+  * Professor Vanselow, YouTube Videos
+  * Teacher Assistant Damien
+  * Classmate Luis Hernandez 
+  * StackOverFlow 
+  * Rashid Coder Youtube videos
+  * https://www.geeksforgeeks.org/java/
+  * http://tutorials.jenkov.com/javafx/tableview.html
 # History
 The addition of a css file has allowed the developer to be more creative. The program is also connected to the database.
 # Key Programming Concepts Utilized
