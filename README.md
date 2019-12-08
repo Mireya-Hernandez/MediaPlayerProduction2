@@ -14,32 +14,33 @@ Note: Unable to get document folder functioning.
 # Getting Started
 Download repository and try it out.
 # Built With
-Intellij by JetBrains
-SceneBuilder
-JavaFX
-Data Base H2
+*Intellij by JetBrains
+*SceneBuilder
+*JavaFX
+*Data Base H2
 # Contributing
-Knowlegde 
+This is to help share knowledge with other beginner-intermedian programmers.
 # Author
  Mireya Hernandez Cruz
 # License
  GNU General Public License
 # Acknowledgments
-  Professor Vanselow, YouTube Videos
-  Teacher Assistant Damien
-  Classmate Luis Hernandez 
-  StackOverFlow 
-  Rashid Coder Youtube videos
-  https://www.geeksforgeeks.org/java/
+  *Professor Vanselow, YouTube Videos
+  *Teacher Assistant Damien
+  *Classmate Luis Hernandez 
+  *StackOverFlow 
+  *Rashid Coder Youtube videos
+  *https://www.geeksforgeeks.org/java/
 # History
+The addition of a css file has allowed the developer to be more creative. The program is also connected to the database.
 # Key Programming Concepts Utilized
-1  Java, GUI intro
-2 Java Fundamentals Data types, Strings, Console input and output, Operators, Conditionals, Loops, Arrays
-3 Objects and Classes 
-4 Databases -H2
-6 Enums, Interfaces, Abstract Classes
-7 Inheritance
-8 Polymorphism 
+1.  Java, GUI intro
+2. Java Fundamentals Data types, Strings, Console input and output, Operators, Conditionals, Loops, Arrays
+3. Objects and Classes 
+4. Databases -H2
+6. Enums, Interfaces, Abstract Classes
+7. Inheritance
+8. Polymorphism 
 10 Encapsulation
 11 Lists and ArrayLists
 12 Lambda Expressions
