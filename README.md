@@ -8,6 +8,8 @@ https://mireya-hernandez.github.io/MediaPlayerProduction2/
 Note: Unable to get document folder functioning.
 
 # Diagrams
+![GitHub Logo](/images/logo.png)
+
 
 # Getting Started
 Download repository and try it out.
