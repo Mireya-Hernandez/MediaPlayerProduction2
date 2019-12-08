@@ -1,6 +1,7 @@
 package sample;
 
-public abstract  interface MultimediaControl {
+public abstract interface MultimediaControl {
+
   public void play();
 
   public void stop();

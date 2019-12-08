@@ -1,8 +1,8 @@
 /*Project:HW_3 Stack Frame
-  * Created: 10/20/2019
-  * Author: Mireya Hernandez Cruz
-  * Purpose: The controller of the Media Player Production with fields. Scene Builder was used.
-  *   Give user feature to interact with the system.
+ * Created: 10/20/2019
+ * Author: Mireya Hernandez Cruz
+ * Purpose: The controller of the Media Player Production with fields. Scene Builder was used.
+ *   Give user feature to interact with the system.
  */
 
 package sample;
@@ -95,16 +95,16 @@ public class Controller {
   public TableView<Product> exsitProductTableView;
 
   @FXML
-  public TableColumn< ?, ?> colProductName;
+  public TableColumn<?, ?> colProductName;
 
   @FXML
   public TableColumn<?, ?> tableColumType;
 
   @FXML
-  public TableColumn< ?, ?> colManufacturer;
+  public TableColumn<?, ?> colManufacturer;
 
   private ObservableList<Product> productionLine;
-        //Table view
+  //Table view
 
   public void initialize() {
 
@@ -115,22 +115,24 @@ public class Controller {
     choiceBoxItemType.getItems().addAll(ItemType.values());
     productionLine = FXCollections.observableArrayList();
     initializedDB();
-    }
+  }
 
 
- /**
+  /**
    * ` User can press the add production button and it display is the console add product. In the
    * database there is type - audio, manufacturer-Apple and name-ipod.
    */
   public void addProductButtonClick(ActionEvent event) {
     System.out.println("Add Product");
-    productionLine.add(new Product( productNameTextField.getText(), manufacturerTextField.getText(), choiceBoxItemType.getValue()));
+    productionLine.add(new Product(productNameTextField.getText(), manufacturerTextField.getText(),
+        choiceBoxItemType.getValue()));
     exsitProductTableView.setItems(productionLine);
     colProductName.setCellValueFactory(new PropertyValueFactory<>("Name"));
     colManufacturer.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
     tableColumType.setCellValueFactory(new PropertyValueFactory<>("type"));
 
   }
+
   @FXML
   void recordProButton(ActionEvent event) {
     System.out.println("Add record");
@@ -142,9 +144,7 @@ public class Controller {
    */
 
 
-
-
-static void initializedDB() {
+  static void initializedDB() {
     //No more than 2 constructive capital letter but i left it as is
     final String JDBC_DRIVER = "org.h2.Driver";
     final String DB_URL = "jdbc:h2:./res/MediaDB";
@@ -168,7 +168,7 @@ static void initializedDB() {
       //String sql = "SELECT * FROM JOBS";
 
       String sql =
-           "INSERT INTO PRODUCT(ID,NAME,TYPE,MANUFACTURER)" + " VALUES (?,?,?)";
+          "INSERT INTO PRODUCT(ID,NAME,TYPE,MANUFACTURER)" + " VALUES (?,?,?)";
       System.out.println("sql is " + sql);
       stmt.executeUpdate(sql);
 
@@ -182,7 +182,7 @@ static void initializedDB() {
     } catch (SQLException e) {
       e.printStackTrace();
     }
-}
+  }
 }
 
 

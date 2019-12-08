@@ -1,4 +1,5 @@
 package sample;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,9 +20,9 @@ public class Employee {
       email = "user@oracleacademy.Test";
     }
 
-    if (isValidPassword(password)==true) {
+    if (isValidPassword(password) == true) {
       this.password = password;
-    }else {
+    } else {
       this.password = "pw";
     }
 
@@ -45,6 +46,7 @@ public class Employee {
     boolean found = matcher.find();
     return found;
   }
+
   private void setEmail(String name) {
 
     Pattern nameBeforeSpace = Pattern.compile("(.*)\\s", Pattern.MULTILINE);

@@ -1,6 +1,7 @@
 package sample;
 
 public class Screen implements ScreenSpec {
+
   String resolution;
   int refreshrate;
   int responsetime;

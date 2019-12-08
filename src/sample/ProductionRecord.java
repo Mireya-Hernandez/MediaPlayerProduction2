@@ -11,13 +11,12 @@ public class ProductionRecord {
   Date prodDate;
 
   /**
-   *
    * @param productionNum Integer for the production number.
-   * @param productID  Product identification number.
-   * @param serialNum The serial number of a product.
-   * @param prodDate The date the product was created.
+   * @param productID     Product identification number.
+   * @param serialNum     The serial number of a product.
+   * @param prodDate      The date the product was created.
    */
-  public ProductionRecord ( int productionNum, int productID, String serialNum, Date prodDate) {
+  public ProductionRecord(int productionNum, int productID, String serialNum, Date prodDate) {
     this.productionNum = productionNum;
     this.productID = productID;
     this.serialNum = serialNum;
@@ -25,21 +24,19 @@ public class ProductionRecord {
   }
 
   /**
-   *
    * @param productProduced The product produce.
-   * @param count The loop count.
+   * @param count           The loop count.
    */
   public ProductionRecord(Product productProduced, int count) {
-    serialNum =  "%05d" + count;
-    String newNum = productProduced.getManufacturer().substring(0,3) + productProduced.getType() ;
-
+    serialNum = "%05d" + count;
+    String newNum = productProduced.getManufacturer().substring(0, 3) + productProduced.getType();
 
 
   }
 
   @Override
   public String toString() {
-    return "Prod. Num: " + productionNum +  " Product ID: " + productID + " Serial Num: AppAU"
+    return "Prod. Num: " + productionNum + " Product ID: " + productID + " Serial Num: AppAU"
         + serialNum + " Date: " + new Date();
 
   }
@@ -68,7 +65,7 @@ public class ProductionRecord {
     productID = Id;
   }
 
-  public void setSerialNum(String serialNum,  ItemType type) {
+  public void setSerialNum(String serialNum, ItemType type) {
     this.serialNum = serialNum;
 
   }
@@ -79,7 +76,6 @@ public class ProductionRecord {
   }
 
   /**
-   *
    * @param productID Product identification.
    */
   public ProductionRecord(int productID) {
