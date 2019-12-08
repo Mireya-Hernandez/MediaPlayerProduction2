@@ -95,29 +95,40 @@ public class Controller {
   public TableView<Product> exsitProductTableView;
 
   @FXML
-  public TableColumn< Product, String> colProductName;
+  public TableColumn< ?, ?> colProductName;
 
   @FXML
-  public TableColumn<Product, String> tableColumType;
+  public TableColumn<?, ?> tableColumType;
 
   @FXML
-  public TableColumn< Product, String> colManufacturer;
+  public TableColumn< ?, ?> colManufacturer;
 
-  private ObservableList<Product> productionLine =
-        FXCollections.observableArrayList(); //Table view
+  private ObservableList<Product> productionLine;
+        //Table view
+
+  public void initialize() {
+
+    chooseQuanityComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    chooseQuanityComboBox.setEditable(true);
+    chooseQuanityComboBox.getSelectionModel().selectFirst();
+    //choiceBox for ItemType
+    choiceBoxItemType.getItems().addAll(ItemType.values());
+    productionLine = FXCollections.observableArrayList();
+    initializedDB();
+    }
+
 
  /**
    * ` User can press the add production button and it display is the console add product. In the
    * database there is type - audio, manufacturer-Apple and name-ipod.
    */
   public void addProductButtonClick(ActionEvent event) {
-    String txtName = productNameTextField.getText();
-    String txtMan = manufacturerTextField.getText();
-    ItemType type = choiceBoxItemType.getValue();
-
-   productionLine.add(new Product(txtName,txtMan,type));
-   exsitProductTableView.setItems(productionLine);
-
+    System.out.println("Add Product");
+    productionLine.add(new Product( productNameTextField.getText(), manufacturerTextField.getText(), choiceBoxItemType.getValue()));
+    exsitProductTableView.setItems(productionLine);
+    colProductName.setCellValueFactory(new PropertyValueFactory<>("Name"));
+    colManufacturer.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
+    tableColumType.setCellValueFactory(new PropertyValueFactory<>("type"));
 
   }
   @FXML
@@ -129,25 +140,7 @@ public class Controller {
    * Represents initialization of the comobox to add string items users can select . The user may
    * select  or input one string if they do not the default is 1.
    */
-  public void initialize() {
 
-    chooseQuanityComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    chooseQuanityComboBox.setEditable(true);
-    chooseQuanityComboBox.getSelectionModel().selectFirst();
-    //choiceBox for ItemType
-    choiceBoxItemType.getItems().addAll(ItemType.values());
-
-
-    initializedDB();
-    settingUpColumns();
-    }
-
- private void settingUpColumns() {
-  colProductName.setCellValueFactory(new PropertyValueFactory<>("Name"));
-  colManufacturer.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
-  tableColumType.setCellValueFactory(new PropertyValueFactory<>("Type"));
-
-}
 
 
 

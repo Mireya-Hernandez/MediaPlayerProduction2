@@ -67,7 +67,7 @@
                         <TextField fx:id="ManufacturerTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                       </children>
                     </GridPane>
-                  <ChoiceBox fx:id="choiceBoxItemType" layoutX="149.0" layoutY="127.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="choiceBoxItemType" layoutX="149.0" layoutY="127.0" prefWidth="150.0" stylesheets="@MediaProduct.css" />
                   <Label fx:id="ItemTypeGrid" layoutX="14.0" layoutY="129.0" prefHeight="22.0" prefWidth="101.0" text="Item Type" textFill="#3239f0">
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
@@ -106,7 +106,7 @@
                                  <font>
                                     <Font name="System Bold Italic" size="12.0" />
                                  </font></Label>
-                    <ComboBox fx:id="chooseQuanityComboBox" layoutX="128.0" layoutY="101.0" prefWidth="150.0" />
+                    <ComboBox fx:id="chooseQuanityComboBox" layoutX="128.0" layoutY="101.0" prefWidth="150.0" stylesheets="@MediaProduct.css" />
                     <Button fx:id="RecordProductionButton" layoutX="162.0" layoutY="146.0" mnemonicParsing="false" onAction="#recordProButton" text="Record Production" textAlignment="CENTER" textFill="#1439cd" />
                   </children>
                 </AnchorPane>

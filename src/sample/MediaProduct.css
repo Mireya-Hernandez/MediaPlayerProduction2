@@ -1,5 +1,5 @@
 .button {
-    -fx-text-fill: white;
+    -fx-text-fill: #ffee78;
     -fx-font-family: "sans-serif";
     -fx-font-style: italic;
     -fx-border-color: #48BF91;
@@ -16,13 +16,13 @@
 
 .tab{
     -fx-background-color: silver;
-    -fx-text-fill: white;
+    -fx-text-fill: #ffe9a8;
     -fx-background-radius: 8;
     -fx-font-style: bold;
 
 }
 .tab-label{
-    -fx-text-fill: white;
+    -fx-text-fill: #fff3a0;
     -fx-font-family: sans-serif;
     -fx-font-style: bold;
 }
@@ -33,8 +33,8 @@
 -fx-background-color: pink;
 }
 .label{
--fx-text-fill:white;
+-fx-text-fill: #ffe99e
 }
-.table-coulmn {
+.table-view {
 -fx-background-color: silver;
 }
