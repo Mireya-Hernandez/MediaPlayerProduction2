@@ -42,8 +42,8 @@ The addition of a css file has allowed the developer to be more creative. The pr
 6. Enums, Interfaces, Abstract Classes
 7. Inheritance- is a relationship 
 8. Polymorphism -Interpertating objects in many diffrent ways
-10 Encapsulation- Placing data and methods in one unit -information hidding-not visible outside the object
-11 Lists and ArrayLists- data structure of a collection of values or variables
-12 Lambda Expressions- Anonymous Functions
-13 Strings, Regular Expressions
-14 Recursion, Modules -repeating until returning to the base- reapeted application 
+10. Encapsulation- Placing data and methods in one unit -information hidding-not visible outside the object
+11. Lists and ArrayLists- data structure of a collection of values or variables
+12. Lambda Expressions- Anonymous Functions
+13. Strings, Regular Expressions
+14. Recursion, Modules -repeating until returning to the base- reapeted application 
