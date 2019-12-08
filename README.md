@@ -3,6 +3,7 @@
 Software description: This system is created to be a software for a media player production facility that will keep track of what products are produced. The program was created by Mireya Hernandez for an indiviual class project Junior year of college. It was the first major project attempted with the use of scene builder it consist of textArea, textField, comboBox, tabs, buttons and an H2 database.   
 # Demonstration
 ![Demo](https://i.imgur.com/cpYsOgK.gifv)
+![Demo](https://i.imgur.com/cpYsOgK.gifv)
 # Documentation
 https://mireya-hernandez.github.io/MediaPlayerProduction2/ 
 Note: Unable to get document folder functioning.
