@@ -3,6 +3,9 @@
  * Author: Mireya Hernandez Cruz
  * Purpose: The controller of the Media Player Production with fields. Scene Builder was used.
  *   Give user feature to interact with the system.
+ * //I could not figure out how to populate the TableView my classmates Luis Hernandez and
+    //Nicholis tried to help me out but my code is was confusing.
+    //I also received help from Professor Vanselow and the Teacher Assistant Damien
  */
 
 package sample;
@@ -113,6 +116,7 @@ public class Controller {
     chooseQuanityComboBox.getSelectionModel().selectFirst();
     //choiceBox for ItemType
     choiceBoxItemType.getItems().addAll(ItemType.values());
+
     productionLine = FXCollections.observableArrayList();
     initializedDB();
   }
@@ -160,7 +164,7 @@ public class Controller {
       Class.forName(JDBC_DRIVER);
 
       //STEP 2: Open a connection
-      conn = DriverManager.getConnection(DB_URL, User, Pass);
+      conn = DriverManager.getConnection(DB_URL, User, Pass); //Unfixed Bug
 
       //STEP 3: Execute a query
       stmt = conn.createStatement();

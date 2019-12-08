@@ -8,7 +8,7 @@ public class MoviePlayer extends Product implements MultimediaControl {
   /**
    * MoviePlayer class focus on movie player products.
    *
-   * @param name         is a String and indicates the name of the product.
+   * @param name         is a String and indicates the name of the product of the movie player.
    * @param manufacturer is given in a String it indicates the manufacturer the product is from.
    * @param screen       is a screen type it indicates the size and other specification of the
    *                     screen.

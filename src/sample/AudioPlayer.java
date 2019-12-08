@@ -11,10 +11,10 @@ public class AudioPlayer  extends Product implements MultimediaControl {
 
   /**
    * The Audio Player class.
-   * @param name A string for the name of the product.
-   * @param manufacturer A string for manufacturer.
+   * @param name A string for the name of the product like an ipod.
+   * @param manufacturer A string to identify the manufacturer example Apple.
    * @param supportedAudioFormats A string for the type of audio format supported by the system.
-   * @param supportedPlaylistFormats A string for play list format.
+   * @param supportedPlaylistFormats A string for play list format supported by the system.
    */
 
 

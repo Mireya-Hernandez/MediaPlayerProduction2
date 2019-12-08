@@ -58,7 +58,7 @@ public class Product implements Item {
   class Widget extends Product {
 
     Widget(String name, String manufacturer, ItemType type) {
-      super(name, manufacturer, type);
+      super(name, manufacturer, type); //Unfixed Bug,  code not in use
     }
   }
 
