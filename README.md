@@ -4,8 +4,11 @@ Software description: This system is created to be a software for a media player
 # Demonstration
 https://i.imgur.com/cpYsOgK.gifv
 # Documentation
+https://mireya-hernandez.github.io/MediaPlayerProduction2/ 
+Note: Unable to get document folder functioning.
 
 # Diagrams
+
 # Getting Started
 Download repository and try it out.
 # Built With
