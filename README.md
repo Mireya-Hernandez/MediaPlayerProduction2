@@ -8,7 +8,7 @@ https://mireya-hernandez.github.io/MediaPlayerProduction2/
 Note: Unable to get document folder functioning.
 
 # Diagrams
-![Class Diagram](/images/logo.png)
+![Class Diagram](https://github.com/Mireya-Hernandez/MediaPlayerProduction2/blob/master/Class%20Diagram%20-%20Media%20Production%20Player.JPG)
 
 
 # Getting Started
