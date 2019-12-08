@@ -10,7 +10,7 @@ Note: Unable to get document folder functioning.
 # Diagrams
 ![Class Diagram](https://github.com/Mireya-Hernandez/MediaPlayerProduction2/blob/master/Class%20Diagram%20-%20Media%20Production%20Player.JPG)
 
-
+![Database Diagram](https://github.com/Mireya-Hernandez/MediaPlayerProduction2/blob/master/Database%20Tables.JPG)
 # Getting Started
 Download repository and try it out.
 # Built With
@@ -37,13 +37,13 @@ The addition of a css file has allowed the developer to be more creative. The pr
 # Key Programming Concepts Utilized
 1.  Java, GUI intro
 2. Java Fundamentals Data types, Strings, Console input and output, Operators, Conditionals, Loops, Arrays
-3. Objects and Classes 
+3. Objects and Classes -Blueprint Instance of a class 
 4. Databases -H2
 6. Enums, Interfaces, Abstract Classes
-7. Inheritance
-8. Polymorphism 
-10 Encapsulation
-11 Lists and ArrayLists
-12 Lambda Expressions
+7. Inheritance- is a relationship 
+8. Polymorphism -Interpertating objects in many diffrent ways
+10 Encapsulation- Placing data and methods in one unit -information hidding-not visible outside the object
+11 Lists and ArrayLists- data structure of a collection of values or variables
+12 Lambda Expressions- Anonymous Functions
 13 Strings, Regular Expressions
-14 Recursion, Modules 
+14 Recursion, Modules -repeating until returning to the base- reapeted application 
